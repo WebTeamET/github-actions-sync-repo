@@ -22,7 +22,6 @@ jobs:
           git config --global user.email "webteamencircle@gmail.com"
           git config --global user.name "WebTeamET"
 
-          git remote remove second_repo || true
           git remote add second_repo https://AbhiDET:${SECOND_REPO_TOKEN}@github.com/AbhiDET/github-actions-sync-repo.git
 
           git push --force second_repo main
