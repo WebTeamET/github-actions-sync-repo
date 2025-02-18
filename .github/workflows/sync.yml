@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '.github/workflows/sync.yml'
 
 jobs:
   sync:
@@ -20,9 +22,8 @@ jobs:
           git config --global user.email "webteamencircle@gmail.com"
           git config --global user.name "WebTeamET"
 
-          # Add the second repo as a remote
+          git remote remove second_repo || true
           git remote add second_repo https://AbhiDET:${SECOND_REPO_PAT}@github.com/AbhiDET/github-actions-sync-repo.git
 
-          # Push main branch and all tags (safer than --mirror)
           git push --force second_repo main
           git push --tags second_repo
