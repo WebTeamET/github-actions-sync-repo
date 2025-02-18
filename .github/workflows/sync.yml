@@ -23,5 +23,6 @@ jobs:
           # Add the second repo as a remote
           git remote add second_repo https://AbhiDET:${SECOND_REPO_PAT}@github.com/AbhiDET/github-actions-sync-repo.git
 
-          # Push all branches and tags
-          git push --mirror second_repo
+          # Push main branch and all tags (safer than --mirror)
+          git push --force second_repo main
+          git push --tags second_repo
