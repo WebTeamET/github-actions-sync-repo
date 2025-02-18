@@ -19,8 +19,8 @@ jobs:
         env:
           SECOND_REPO_TOKEN: ${{ secrets.SECOND_REPO_PAT }}
         run: |
-          git config --global user.email "abhishekd.encircle@gmail.com"
-          git config --global user.name "AbhiDET"
+          git config --global user.email "webteamencircle@gmail.com"
+          git config --global user.name "WebTeamET"
 
           git remote add second_repo https://AbhiDET:${SECOND_REPO_TOKEN}@github.com/AbhiDET/github-actions-sync-repo.git
 
